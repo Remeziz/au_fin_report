@@ -46,5 +46,5 @@ vars:
   json_column: _airbyte_data
   models_to_source:
     au_fin_report : main.au_get_v2_settlement_report_data_flat_file
-                   
+                    main.au_get_flat_file_all___y_last_update_general
     
