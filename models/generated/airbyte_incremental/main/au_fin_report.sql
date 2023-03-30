@@ -1,4 +1,5 @@
-select
+select 
+       date_time
        settlement_id,
        type,
        order_id,
@@ -25,7 +26,7 @@ select
 
 from (
          select
-
+                {{ dbt_date.convert_timezone("posted-date", "America/New_York", "UTC") }} as date_time
                 `settlement-id`                                              as settlement_id,
                 `transaction-type`                                           as type,
                 `order-id`                                                   as order_id,
@@ -61,7 +62,7 @@ from (
 
 
          group by
-
+                  {{ dbt_date.convert_timezone("posted-date", "America/New_York", "UTC") }},
                   `settlement-id`,
                   `transaction-type`,
                   `order-id`,
@@ -93,7 +94,7 @@ from (
 
      ) fin
 
-group by 
+group by date_time,
          settlement_id,
          type,
          order_id,
