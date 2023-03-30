@@ -1,4 +1,4 @@
-select date_time,
+select
        settlement_id,
        type,
        order_id,
@@ -25,7 +25,7 @@ select date_time,
 
 from (
          select
-                CONVERT_TZ(`posted-date`, '+00:00', '+9:00')                 as date_time,
+
                 `settlement-id`                                              as settlement_id,
                 `transaction-type`                                           as type,
                 `order-id`                                                   as order_id,
@@ -61,7 +61,7 @@ from (
 
 
          group by
-                  CONVERT_TZ(`posted-date`, '+00:00', '+9:00'),
+
                   `settlement-id`,
                   `transaction-type`,
                   `order-id`,
@@ -93,7 +93,7 @@ from (
 
      ) fin
 
-group by date_time,
+group by 
          settlement_id,
          type,
          order_id,
