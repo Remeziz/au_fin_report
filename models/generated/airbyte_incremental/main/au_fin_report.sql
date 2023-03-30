@@ -1,4 +1,3 @@
-
 select date_time,
        settlement_id,
        type,
@@ -16,7 +15,7 @@ select date_time,
        sum(gift_wrap_credits)   as gift_wrap_credits,
        sum(promotional_rebates) as promotional_rebates,
        sum(sales_tax_collected) as sales_tax_collected,
-       sum(low_value_goods)     as sales_tax_collected,
+       sum(low_value_goods)     as low_value_goods,
        sum(selling_fees)        as selling_fees,
        sum(fba_fees)            as fba_fees,
        sum(other_transaction_fees) as other_transaction_fees,
