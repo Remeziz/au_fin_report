@@ -3,3 +3,19 @@
 packages:
   - git: "https://github.com/fishtown-analytics/dbt-utils.git"
     revision: 0.8.2
+ - package: dbt-labs/dbt_utils
+    version: 0.7.1
+  - package: brooklyn-data/dbt_artifacts
+    version: 1.2.0
+    install-prerelease: true
+  - package: dbt-labs/codegen
+    version: 0.4.0
+  - package: calogica/dbt_expectations
+    version: 0.4.1
+  - git: https://github.com/dbt-labs/dbt-audit-helper.git
+    revision: 0.4.0
+  - git: "https://github.com/dbt-labs/dbt-labs-experimental-features" # git URL
+    subdirectory: "materialized-views" # name of subdirectory containing `dbt_project.yml`
+    revision: 0.0.1
+  - package: dbt-labs/snowplow
+    version: 0.13.0
