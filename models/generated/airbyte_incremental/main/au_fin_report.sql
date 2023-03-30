@@ -1,8 +1,3 @@
-{{ confg(   
-    schema = "main",
-    materialized = 'table',
-    tags = [ "top-level" ]
-) }}
 
 select date_time,
        settlement_id,
