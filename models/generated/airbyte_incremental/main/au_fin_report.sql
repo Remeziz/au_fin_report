@@ -1,6 +1,5 @@
 {{ confg(   
-   schema = "main",
-   materialized = 'table'
+   schema = "main"
 ) }}
 select date_time,
        settlement_id,
