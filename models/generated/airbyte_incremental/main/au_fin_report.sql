@@ -1,10 +1,3 @@
-{{ confg(   
-unique_key = '_airbyte_ab_id',
-   schema = "main",
-   materialized = 'table',
-   tags = [ "top-level" ]
-) }}
-
 select date_time,
        settlement_id,
        type,
@@ -68,7 +61,7 @@ from (
 
 
          group by
-                  CONVERT_TZ(`posted-date`, '+00:00', '+9:00'),
+              
                   `settlement-id`,
                   `transaction-type`,
                   `order-id`,
