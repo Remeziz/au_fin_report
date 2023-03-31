@@ -25,7 +25,7 @@ select date_time,
 
 from (
          select
-                CONVERT_TZ(`posted-date`, '+00:00', '+9:00')                 as date_time,
+                convert_timezone(`posted-date`, target_tz="EIT", source_tz="UTC")  as date_time,
                 `settlement-id`                                              as settlement_id,
                 `transaction-type`                                           as type,
                 `order-id`                                                   as order_id,
