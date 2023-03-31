@@ -1,3 +1,4 @@
+{{ config(schema='main') }}
 select date_time,
        settlement_id,
        type,
