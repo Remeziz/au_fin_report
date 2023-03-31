@@ -61,7 +61,7 @@ from (
 
 
          group by
-              
+                  CONVERT_TZ(`posted-date`, '+00:00', '+9:00'),
                   `settlement-id`,
                   `transaction-type`,
                   `order-id`,
