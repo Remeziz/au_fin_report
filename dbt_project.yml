@@ -40,6 +40,8 @@ models:
       airbyte_views:
         +tags: airbyte_internal_views
         +materialized: view
+      my_project:
+        +schema: main
 vars:
   dbt_utils_dispatch_list:
   - airbyte_utils
