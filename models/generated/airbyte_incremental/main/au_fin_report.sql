@@ -1,3 +1,10 @@
+{{ confg(   
+unique_key = '_airbyte_ab_id',
+   schema = "main",
+   materialized = 'table',
+   tags = [ "top-level" ]
+) }}
+
 select date_time,
        settlement_id,
        type,
