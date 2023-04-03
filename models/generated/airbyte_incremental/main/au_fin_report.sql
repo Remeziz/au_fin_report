@@ -61,7 +61,7 @@ from (
 
 
          group by
-                  `posted-date`,
+                  DATE_FORMAT(`posted-date`, '%Y-%m-%d %H:%i:%s.%f'),
                   `settlement-id`,
                   `transaction-type`,
                   `order-id`,
