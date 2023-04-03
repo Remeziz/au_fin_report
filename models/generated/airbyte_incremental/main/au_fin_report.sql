@@ -25,7 +25,7 @@ select date_time,
 
 from (
          select
-                TIMESTAMP(DATE_FORMAT(`posted-date`, '%Y-%m-%d %H:%i:%s.%f'))  as date_time,
+                CONVERT_TZ(TIMESTAMP(DATE_FORMAT(`posted-date`, '%Y-%m-%d %H:%i:%s.%f')), '+00:00', '+9:00')   as date_time,
                 `settlement-id`                                              as settlement_id,
                 `transaction-type`                                           as type,
                 `order-id`                                                   as order_id,
@@ -61,7 +61,7 @@ from (
            where `posted-date`!=''
 
          group by
-                    TIMESTAMP(DATE_FORMAT(`posted-date`, '%Y-%m-%d %H:%i:%s.%f')),
+                   CONVERT_TZ(TIMESTAMP(DATE_FORMAT(`posted-date`, '%Y-%m-%d %H:%i:%s.%f')), '+00:00', '+9:00'),
                   `settlement-id`,
                   `transaction-type`,
                   `order-id`,
