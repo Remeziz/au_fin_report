@@ -25,7 +25,7 @@ select date_time,
 
 from (
          select
-                `posted-date`  as date_time,
+               DATE_FORMAT(`posted-date`, '%Y-%m-%d %H:%i:%s.%f')  as date_time,
                 `settlement-id`                                              as settlement_id,
                 `transaction-type`                                           as type,
                 `order-id`                                                   as order_id,
