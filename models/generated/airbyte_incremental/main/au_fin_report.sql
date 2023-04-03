@@ -25,7 +25,7 @@ select date_time,
 
 from (
          select
-                convert_timezone(`posted-date`, target_tz="EIT", source_tz="UTC")  as date_time,
+                `posted-date`  as date_time,
                 `settlement-id`                                              as settlement_id,
                 `transaction-type`                                           as type,
                 `order-id`                                                   as order_id,
@@ -61,7 +61,7 @@ from (
 
 
          group by
-                  CONVERT_TZ(`posted-date`, '+00:00', '+9:00'),
+                  `posted-date`,
                   `settlement-id`,
                   `transaction-type`,
                   `order-id`,
