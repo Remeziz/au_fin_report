@@ -65,7 +65,8 @@ from (
                             on gn.`amazon-order-id` = ff.`order-id` and ff.sku = gn.sku
 
          where `transaction-type` not in ('Current Reserve Amount', 'Previous Reserve Amount Balance')
-         
+         and `posted-date`!=''
+
          group by CONVERT_TZ(TIMESTAMP(DATE_FORMAT(`posted-date`, '%Y-%m-%d %H:%i:%s.%f')), '+00:00', '+9:00'),
                   `settlement-id`,
                   `transaction-type`,
