@@ -62,8 +62,8 @@ from (
                 `other-amount`                                                                as other,
                 `total-amount`                                                                as total
 
-         from main.au_get_v2_settlement_report_data_flat_file ff
-                  left join main.au_get_flat_file_all___y_last_update_general gn
+         from main.fe_get_v2_settlement_report_data_flat_file ff
+                  left join main.fe_get_flat_file_all___y_last_update_general gn
                             on gn.`amazon-order-id` = ff.`order-id` and ff.sku = gn.sku
 
          where `transaction-type` not in ('Current Reserve Amount', 'Previous Reserve Amount Balance')
